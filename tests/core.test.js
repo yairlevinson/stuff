@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import {lessons} from '../content.js';
 import {grade,remainingSeconds,validSession} from '../core.js';
 test('curriculum has six mini units and a full-length original practice',()=>{
- assert.equal(lessons.length,7);
- assert.deepEqual(lessons.map(l=>l.questions.length),[12,12,12,12,12,12,26]);
+ assert.equal(lessons.length,10);
+ assert.deepEqual(lessons.map(l=>l.questions.length),[12,12,12,12,12,12,26,6,6,6]);
  const ids=new Set();
  for(const l of lessons){
   assert.ok(l.minutes>0);assert.ok(l.teacherGuide.goal&&l.teacherGuide.strategy);
@@ -13,11 +13,11 @@ test('curriculum has six mini units and a full-length original practice',()=>{
    assert.equal(q.options.length,4);assert.equal(new Set(q.options).size,4);
    assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4);
    assert.ok(q.explanation.length>10);assert.ok(q.prompt.length>5);
-   assert.ok(['reading','arithmetic','word','visual'].includes(q.category));
+   assert.ok(['reading','arithmetic','word','visual','patterns'].includes(q.category));
    if(q.category==='reading')assert.ok(q.passage.length>30);
   }
  }
- const full=lessons.at(-1).questions;
+ const full=lessons[6].questions;
  assert.equal(full.filter(q=>q.category==='reading').length,12);
  assert.equal(full.filter(q=>q.category!=='reading').length,14);
 });

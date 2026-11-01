@@ -5,3 +5,5 @@
 #main:focus{outline:none} bdi[dir="ltr"]{direction:ltr;unicode-bidi:isolate;display:inline-block}
 
 .math{white-space:pre-line}
+
+.pattern-diagram{direction:ltr;unicode-bidi:isolate;text-align:center;font-family:Arial,sans-serif;font-size:clamp(19px,4.5vw,30px);line-height:2;white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f5ee;border-radius:12px;padding:18px 10px;margin:16px 0;break-inside:avoid}

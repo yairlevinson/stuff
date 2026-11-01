@@ -22,7 +22,7 @@ async function assertVocalized(){
 await page.goto('http://127.0.0.1:3000');
 await page.locator('.lesson-card').first().waitFor();
 await assertVocalized();
-assert.equal(await page.locator('.lesson-card').count(),7);
+assert.equal(await page.locator('.lesson-card').count(),10);
 await page.screenshot({path:'/tmp/amika-desktop.png',fullPage:true});
 await page.locator('[data-action="lesson"]').first().click();
 await assertVocalized();
@@ -61,7 +61,7 @@ await page.locator('.score-number').waitFor();
 await assertVocalized();
 assert.match(unpoint(await page.locator('.score h1').textContent()),/הזמן הסתים/);
 await page.locator('[data-action="home"]').first().click();
-await page.locator('[data-action="lesson"]').last().click();
+await page.locator('[data-action="lesson"][data-id="lesson-7"]').click();
 await page.locator('[data-action="worksheet"]').click();
 assert.equal(await page.locator('.panel .review-item').count(),26);
 await assertVocalized();
