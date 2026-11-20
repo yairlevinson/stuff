@@ -22,7 +22,7 @@ async function assertVocalized(){
 await page.goto('http://127.0.0.1:3000');
 await page.locator('.lesson-card').first().waitFor();
 await assertVocalized();
-assert.equal(await page.locator('.lesson-card').count(),10);
+assert.equal(await page.locator('.lesson-card').count(),13);
 await page.screenshot({path:'/tmp/amika-desktop.png',fullPage:true});
 await page.locator('[data-action="lesson"]').first().click();
 await assertVocalized();
