@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import {lessons} from '../content.js';
 import {grade,remainingSeconds,validSession} from '../core.js';
 test('curriculum has six mini units and a full-length original practice',()=>{
- assert.equal(lessons.length,13);
- assert.deepEqual(lessons.map(l=>l.questions.length),[12,12,12,12,12,12,26,6,6,6,6,6,6]);
+ assert.equal(lessons.length,16);
+ assert.deepEqual(lessons.map(l=>l.questions.length),[12,12,12,12,12,12,26,6,6,6,6,6,6,6,6,6]);
  const ids=new Set();
  for(const l of lessons){
   assert.ok(l.minutes>0);assert.ok(l.teacherGuide.goal&&l.teacherGuide.strategy);
